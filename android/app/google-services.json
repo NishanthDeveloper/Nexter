@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "923219245305",
+    "project_id": "nexter-e6dc4",
+    "storage_bucket": "nexter-e6dc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923219245305:android:d5c4534994445d4cfa4a28",
+        "android_client_info": {
+          "package_name": "com.example.nexter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdTTc4fAPoYmLXCwNU0e_DRN_hojliQqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
