@@ -22,9 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     return Scaffold(
       backgroundColor: Color(0xFF101D2C),
-      appBar: AppBar(
-        backgroundColor: Color(0xFFC69963),
-      ),
+      
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -115,11 +113,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 75,
-        width: double.infinity,
-        color: Color(0xFFC69963),
-      ),
+    
     );
   }
 }
