@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nexter/screens/landing_page.dart';
+import 'package:nexter/screens/login_page.dart';
+
+import '../service/auth_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
     "assets/house-5.jpeg",
     "assets/house-6.jpeg"
   ];
+  AuthService authService = AuthService();
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -41,6 +46,41 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFC69963),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(onPressed: ()async {
+            showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("Logout"),
+                    content: Text("Are you sure you want to logout?"),
+                    actions: [
+                      IconButton(
+                          onPressed: () {
+                         Navigator.pop(context);
+                          },
+                          icon: Icon(
+                            Icons.cancel,
+                            color: Colors.red,
+                          )),
+                      IconButton(
+                          onPressed: () async {
+                            authService.signOut().whenComplete(() {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>LandingScreen()));
+                            });
+                          },
+                          icon: Icon(
+                            Icons.done,
+                            color: Colors.green,
+                          ))
+                    ],
+                  );
+                });
+          }, icon: Icon(Icons.logout,color: Colors.white,))
+        ],
+
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
